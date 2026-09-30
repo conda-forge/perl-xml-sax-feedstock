@@ -4,14 +4,14 @@
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   script:
     - perl Makefile.PL INSTALLDIRS=vendor NO_PERLLOCAL=1 NO_PACKLIST=1
@@ -53,9 +53,7 @@ about:
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
   license_family: OTHER
   summary: 'Simple API for XML'
-  license_file:
-    - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
-    - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
